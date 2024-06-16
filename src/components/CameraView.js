@@ -6,6 +6,7 @@ import * as MediaLibrary from 'expo-media-library';
 import CameraButton from './CameraButton';
 import axios from 'axios'; 
 import auth from "@react-native-firebase/auth";
+import { mediaAPIString } from "../utils/API";
 
 export default function CameraViewComponent() {
   const userId = auth().currentUser.uid;
@@ -83,7 +84,7 @@ export default function CameraViewComponent() {
     });
 
     try {
-      const response = await axios.post(`https://ba16-2409-40e3-55-bd7d-d498-e65-cdfc-3cdb.ngrok-free.app/api/media/upload/${userId}`, formData, {
+      const response = await axios.post(`${mediaAPIString}/upload/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

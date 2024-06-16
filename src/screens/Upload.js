@@ -11,7 +11,6 @@ import { mediaAPIString } from "../utils/API";
 const PlaceholderImage = require("../assets/png/background-image.png");
 
 export default function Upload() {
-  const user = auth().currentUser;
   const [selectedImage, setSelectedImage] = useState(null);
   const [useCamera, setUseCamera] = useState(false);
 
@@ -37,7 +36,7 @@ export default function Upload() {
   };
 
   const uploadImage = async (uri) => {
-    if (!user) return;
+    if (!auth().currentUser) return;
 
     const formData = new FormData();
     formData.append('file', {
@@ -47,7 +46,8 @@ export default function Upload() {
     });
 
     try {
-      const response = await axios.post(`${mediaAPIString}/upload/${user.uid}`, formData, {
+      const userId = await auth().currentUser.uid;
+      const response = await axios.post(`${mediaAPIString}/upload/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
