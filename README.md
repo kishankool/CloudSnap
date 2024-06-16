@@ -1,1 +1,1 @@
-# CloudSnap
+# ImageGallery
