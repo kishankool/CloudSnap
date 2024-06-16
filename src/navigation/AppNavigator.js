@@ -6,13 +6,15 @@ import auth from "@react-native-firebase/auth";
 import LoginScreen from "../screens/Login";
 import Upload from '../screens/Upload';
 import GalleryComponent from '../screens/Gallery';
+import HomeScreen from '../screens/Home';
 
 const Stack = createNativeStackNavigator();
 const InsideStack = createNativeStackNavigator();
 
 function InsideLayout() {
   return (
-    <InsideStack.Navigator initialRouteName="Gallery">
+    <InsideStack.Navigator initialRouteName="Home">
+      <InsideStack.Screen name="Home" component={HomeScreen} />
       <InsideStack.Screen name="Upload" component={Upload} />
       <InsideStack.Screen name="Gallery" component={GalleryComponent} />
     </InsideStack.Navigator>
