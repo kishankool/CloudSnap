@@ -47,7 +47,7 @@ export default function Upload() {
     });
 
     try {
-      const response = await axios.post(`${mediaAPIString}/uploadMedia/${user.uid}`, formData, {
+      const response = await axios.post(`${mediaAPIString}/upload/${user.uid}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
