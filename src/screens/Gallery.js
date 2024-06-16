@@ -6,28 +6,26 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
-  Text,
   ActivityIndicator,
-  Button
+  Button,
 } from "react-native";
 import axios from "axios";
+import { Video } from "expo-av";
 import auth from "@react-native-firebase/auth";
-import { Video, AVPlaybackStatus } from "expo-av";
 
 const { width } = Dimensions.get("window");
 
-const GalleryComponent = ({}) => {
-  const video = React.useRef(null);
-  const userId = auth().currentUser.uid;
+const GalleryComponent = () => {
   const [mediaFiles, setMediaFiles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [status, setStatus] = React.useState({});
+
   useEffect(() => {
     fetchMediaFiles();
   }, []);
 
   const fetchMediaFiles = async () => {
     try {
+      const userId = auth().currentUser.uid;
       const response = await axios.get(
         `https://a3c7-2409-40e3-54-22b4-8d22-764-2d7f-d771.ngrok-free.app/api/media/get/${userId}`
       );
@@ -49,25 +47,12 @@ const GalleryComponent = ({}) => {
           <Image source={{ uri: item.url }} style={styles.image} />
         ) : (
           <Video
-            ref={video}
             source={{ uri: item.url }}
             style={styles.image}
             useNativeControls
             resizeMode="contain"
             isLooping
-            onPlaybackStatusUpdate={(status) => setStatus(() => status)}
-          >
-            <View style={styles.buttons}>
-              <Button
-                title={status.isPlaying ? "Pause" : "Play"}
-                onPress={() =>
-                  status.isPlaying
-                    ? video.current.pauseAsync()
-                    : video.current.playAsync()
-                }
-              />
-            </View>
-          </Video>
+          />
         )}
       </TouchableOpacity>
     );
