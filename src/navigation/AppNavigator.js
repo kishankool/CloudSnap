@@ -5,29 +5,16 @@ import auth from "@react-native-firebase/auth";
 // import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/Login";
 import Upload from '../screens/Upload';
-// import ProfileScreen from "../screens/ProfileScreen";
-// import ContactUsScreen from "../screens/ContactUs";
-// import DoubtScreen from "../screens/Doubts";
-// import RegisterScreen from "../screens/Register";
-// import Intent from '../screens/Intent';
-// import LeaseRegisterScreen from '../screens/LeaseRegistration';
-// import DoubtDetail from "../screens/DoubtDetail";
+import GalleryComponent from '../screens/Gallery';
 
 const Stack = createNativeStackNavigator();
 const InsideStack = createNativeStackNavigator();
 
 function InsideLayout() {
   return (
-    <InsideStack.Navigator initialRouteName="Intent">
-      {/* <InsideStack.Screen name="Profile" component={ProfileScreen} />
-      <InsideStack.Screen name="Register" component={RegisterScreen} />
-      <InsideStack.Screen name="Lease Register" component={LeaseRegisterScreen} />
-      <InsideStack.Screen name="Intent" component={Intent} /> */}
-      {/* <InsideStack.Screen name="Home" component={HomeScreen} /> */}
+    <InsideStack.Navigator initialRouteName="Gallery">
       <InsideStack.Screen name="Upload" component={Upload} />
-      {/* <InsideStack.Screen name="ContactUs" component={ContactUsScreen} />
-      <InsideStack.Screen name="Doubts" component={DoubtScreen} />
-      <InsideStack.Screen name="Replies" component={DoubtDetail} /> */}
+      <InsideStack.Screen name="Gallery" component={GalleryComponent} />
     </InsideStack.Navigator>
   );
 }
