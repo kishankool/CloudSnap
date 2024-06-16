@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Text,
   ActivityIndicator,
+  Button
 } from "react-native";
 import axios from "axios";
 import auth from "@react-native-firebase/auth";

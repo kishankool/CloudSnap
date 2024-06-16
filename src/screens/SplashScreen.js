@@ -8,14 +8,14 @@ import {
   StatusBar,
   ImageBackground,
 } from "react-native";
-// import IIGMALogo from "../assets/logo/logo-primary.png";
-import bg from "../assets/png/bg.png";
+import Logo from "../assets/logo/logo.jpeg";
+import bg from "../assets/png/bg.jpeg";
 
 const SplashScreen = () => {
   return (
     <ImageBackground source={bg} style={styles.background}>
       <SafeAreaView style={styles.container}>
-        {/* <Image style={styles.welcomeImage} source={IIGMALogo} /> */}
+        <Image style={styles.welcomeImage} source={Logo} />
         <Text> Image Picker</Text>
       </SafeAreaView>
     </ImageBackground>
