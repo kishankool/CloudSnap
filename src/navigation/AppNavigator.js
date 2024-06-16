@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import auth from "@react-native-firebase/auth";
-// import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/Login";
 import Upload from '../screens/Upload';
 import GalleryComponent from '../screens/Gallery';
@@ -13,7 +12,7 @@ const InsideStack = createNativeStackNavigator();
 
 function InsideLayout() {
   return (
-    <InsideStack.Navigator initialRouteName="Home">
+    <InsideStack.Navigator initialRouteName="">
       <InsideStack.Screen name="Home" component={HomeScreen} />
       <InsideStack.Screen name="Upload" component={Upload} />
       <InsideStack.Screen name="Gallery" component={GalleryComponent} />

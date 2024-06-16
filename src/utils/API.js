@@ -1,0 +1,1 @@
+export const mediaAPIString  = `https://4306-2409-40e3-54-22b4-8d22-764-2d7f-d771.ngrok-free.app/api/media`

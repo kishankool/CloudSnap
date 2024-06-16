@@ -12,6 +12,7 @@ import {
 import axios from "axios";
 import { Video } from "expo-av";
 import auth from "@react-native-firebase/auth";
+import { mediaAPIString } from "../utils/API";
 
 const { width } = Dimensions.get("window");
 
@@ -27,7 +28,7 @@ const GalleryComponent = () => {
     try {
       const userId = auth().currentUser.uid;
       const response = await axios.get(
-        `https://a3c7-2409-40e3-54-22b4-8d22-764-2d7f-d771.ngrok-free.app/api/media/get/${userId}`
+        `${mediaAPIString}/get/${userId}`
       );
       setMediaFiles(response.data);
       setLoading(false);

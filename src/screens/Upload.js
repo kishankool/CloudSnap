@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import ImageViewer from "../components/ImageViewer";
 import auth from "@react-native-firebase/auth";
 import axios from 'axios'
-
+import { mediaAPIString } from "../utils/API";
 const PlaceholderImage = require("../assets/png/background-image.png");
 
 export default function Upload() {
@@ -47,7 +47,7 @@ export default function Upload() {
     });
 
     try {
-      const response = await axios.post(`https://0130-2409-40e3-3153-12b1-8c69-ff25-3433-e1b8.ngrok-free.app/api/media/uploadMedia/${user.uid}`, formData, {
+      const response = await axios.post(`${mediaAPIString}/uploadMedia/${user.uid}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
