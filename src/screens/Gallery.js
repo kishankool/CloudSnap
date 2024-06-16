@@ -7,7 +7,6 @@ import {
   Dimensions,
   TouchableOpacity,
   ActivityIndicator,
-  Button,
 } from "react-native";
 import axios from "axios";
 import { Video } from "expo-av";
@@ -61,6 +60,7 @@ const GalleryComponent = () => {
 
   const handleMediaPress = (item) => {
     // Handle media press action
+    // console.log("Media pressed:", item);
   };
 
   if (loading) {
