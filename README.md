@@ -46,70 +46,90 @@ To set up the repository and run the application locally, follow these steps:
 
 4.  Set up the Backend API:
 
-        Clone the backend repository:
+    Clone the backend repository:
 
-        ```
+        ```bash
         git clone https://github.com/kishankool/backend_gallery_app.git
         cd backend_gallery_app
         ```
 
-        Follow the instructions in the backend repository to set it up and start the server.
+    Follow the instructions in the backend repository to set it up and start the server.
 
-        Update the API base URL in the Cloud Snap app:
+    Update the API base URL in the Cloud Snap app:
 
-        Open src/utils/API.js and replace the mediaAPIString with your own server address:
+    Open src/utils/API.js and replace the mediaAPIString with your own server address:
 
-        ```
+        ```bash
         export const mediaAPIString = `https://your-ngrok-url/api/media`;
         ```
 
 5.  Run the development client:
 
-        You can download the pre-built development client from this link or build your own using the provided scripts.
+    You can download the pre-built development client from this link or build your own using the provided scripts.
 
-        To start the app:
-        ```
-        npm run dev-client
+    To start the app:
 
-        ```
-
-        To build the development client:
+    ````bash
+    npm run dev-client
 
         ```
+
+    To build the development client:
+
+        ```bash
         npm run build-apk
 
         ```
 
+    ````
+
 6.  Setup EAS (Expo Application Services)
     If you want to build your own development client using EAS, follow these steps:
 
-        Install EAS CLI:
-        Setup EAS (Expo Application Services)
+    Install EAS CLI:
 
-        Configure EAS project:
+        ```bash
+        npm i -g eas-cli
+        ```
+
+    Setup EAS (Expo Application Services)
+
+    Configure EAS project:
+
+        ```bash
         eas build:configure
+        ```
 
-        Build the development client:
-        For Android: eas build --profile development --platform android
+    Build the development client:
+    For Android:
 
-        For iOS: eas build --profile development --platform ios
+        ```bash
+        eas build --profile development --platform android
+        ```
 
-        Follow the instructions provided by EAS CLI to complete the build process.
+    For iOS:
 
-        For SHA-1 fingerprint to be used in firebase:
-        type:
-        eas credentials
-        select android -> development -> Keystore -> All the credentials will be visible if you've created a build if you've not created then you can setup a keystore.
+        ```bash
+        eas build --profile development --platform ios
+        ```
+
+    Follow the instructions provided by EAS CLI to complete the build process.
+
+    For SHA-1 fingerprint to be used in firebase:
+    `bash
+    eas credentials
+    `
+    select android -> development -> Keystore -> All the credentials will be visible if you've created a build if you've not created then you can setup a keystore.
 
     Available Scripts
     In the project directory, you can run:
 
-    npm start: Starts the Expo project.
-    npm run android: Starts the Expo project for Android.
-    npm run ios: Starts the Expo project for iOS.
-    npm run web: Starts the Expo project for the web.
-    npm run dev-client: Starts the project with the development client.
-    npm run build-apk: Builds the development client APK.
+    `bash npm start`: Starts the Expo project.
+    `bash npm run android`: Starts the Expo project for Android.
+    `bash npm run ios`: Starts the Expo project for iOS.
+    `bash npm run web `: Starts the Expo project for the web.
+    `bash npm run dev-client `: Starts the project with the development client.
+    `bash npm run build-apk `: Builds the development client APK.
     License
     This project is licensed under the MIT License. See the LICENSE file for details.
 
