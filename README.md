@@ -80,6 +80,27 @@ To set up the repository and run the application locally, follow these steps:
 
         ```
 
+6.  Setup EAS (Expo Application Services)
+    If you want to build your own development client using EAS, follow these steps:
+
+        Install EAS CLI:
+        Setup EAS (Expo Application Services)
+
+        Configure EAS project:
+        eas build:configure
+
+        Build the development client:
+        For Android: eas build --profile development --platform android
+
+        For iOS: eas build --profile development --platform ios
+
+        Follow the instructions provided by EAS CLI to complete the build process.
+
+        For SHA-1 fingerprint to be used in firebase:
+        type:
+        eas credentials
+        select android -> development -> Keystore -> All the credentials will be visible if you've created a build if you've not created then you can setup a keystore.
+
     Available Scripts
     In the project directory, you can run:
 
