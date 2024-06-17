@@ -1,8 +1,10 @@
 // HomeScreen.js
 import React from "react";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import auth from "@react-native-firebase/auth";
+import Button from "../components/Button";
+
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -25,11 +27,11 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Upload Media" onPress={navigateToUpload} />
+        <Button theme="primary" label="Upload Media" onPress={navigateToUpload} />
       <View style={styles.separator} />
-      <Button title="Fetch Gallery" onPress={navigateToGallery} />
+      <Button theme="primary" label="Gallery" onPress={navigateToGallery} />
       <View style={styles.separator} />
-      <Button title="Log Out" onPress={handleLogOut} />
+      <Button theme="primary" label="Log Out" onPress={handleLogOut} />
     </View>
   );
 };
